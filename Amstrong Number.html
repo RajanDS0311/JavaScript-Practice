@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Amstrong Number</title>
+    </head>
+    <body>
+        <script>
+            var num = parseInt(prompt("Enter a number"));
+            var temp = num;
+            var rev = 0;
+
+            while(temp > 0){
+                rem = temp % 10;
+                rev = rev + (rem ** 3);
+                temp = Math.floor(temp / 10); 
+            }
+
+            if (rev == num){
+                document.writeln(num + " is an Armstrong number");
+            } else {
+                document.writeln(num + " is not an Armstrong number");
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Palindrome Number</title>
+    </head>
+    <body>
+        <script>
+            var num = parseInt(prompt("Enter a number"));
+            var temp = num;
+            var rev = 0;
+
+            while(temp > 0){
+                rem = temp % 10;
+                rev = rev * 10 + rem;
+                temp = Math.floor(temp / 10); 
+            }
+
+            if (rev == num){
+                document.writeln(num + " is a Palindrome number");
+            } else {
+                document.writeln(num + " is not a Palindrome number");
+            }
+        </script>
+
+    </body>
+</html>
