@@ -5,14 +5,19 @@
     </head>
     <body>
         <script>
-            var num = parseInt(prompt("Enter your age"));
+            var num = parseInt(prompt("Select any number between 1 to 3"));
             switch(num){
-                case 0 < num < 12:
-                    document.writeln("You are a child");
-                case 13 < num < 18:
-                    document.writeln("You are a teenager");
-                case num > 18:
-                    document.writeln("You are an adult");
+                case 1:                  
+                    document.writeln("You won a Bike");
+                    break;
+                case 2:
+                    document.writeln("You won a Scooter");
+                    break;
+                case 3:
+                    document.writeln("You won a Car");
+                    break;
+                default:
+                    document.writeln("Invalid selection");
             }
             
         </script>
