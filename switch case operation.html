@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Switch Case Operation</title>
+    </head>
+    <body>
+        <script>
+            var num1 = parseInt(prompt("Enter first Number"));
+            var num2 = parseInt(prompt("Enter second Number"));
+            var operation = parseInt(prompt("Select operation \n1. Addition\n2. Subtraction\n3.Multiplication\n4. Division"));
+            switch(operation){
+                case 1:                  
+                    document.writeln("Addition of " + num1 + " and " + num2 + " is: " + (num1 + num2));
+                    break;
+                case 2:
+                    document.writeln("Subtraction of " + num1 + " and " + num2 + " is: " + (num1 - num2));
+                    break;
+                case 3:
+                    document.writeln("Multiplication of " + num1 + " and " + num2 + " is: " + (num1 * num2));
+                    break;
+                case 4:
+                    if (num2 !== 0) {
+                        document.writeln("Division of " + num1 + " and " + num2 + " is: " + (num1 / num2));
+                    } else {
+                        document.writeln("Error: Division by zero is not allowed.");
+                    }
+                    break;
+                default:
+                    document.writeln("Invalid selection");
+            }
+            
+        </script>
+
+    </body>
+</html>   
