@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Star Left Descending triangle</title>
+        <title>Star right mountain</title>
     </head>
 <body>
     <script>
         var n = parseInt(prompt("Enter the number of rows:"));
 
+         for (var i= 1; i<= n;i++){
+
+            for(var j = 1; j<=i ; j++){
+
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
         for (var i= 1; i<= n;i++){
 
-            for(var j = n; j>=i;j--){
+            for(var j = n-1; j>=i;j--){
                 document.write("* ");
             }
             document.write("<br>");
