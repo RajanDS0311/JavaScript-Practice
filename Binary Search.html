@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <title>Binary Search</title>
+        </head>
+    </head>
+
+<body>
+    <script>
+        var n = parseInt(prompt("enter number of elements: "))
+        arr =[]
+
+        for (var i = 0; i < n; i++){
+            arr[i] = parseInt(prompt("enter the element: " + (i+1)))
+        }
+
+        for (var i = 0; i < n; i++){
+            
+            for (var j = i+1;j<n;j++){
+
+                if (arr[j] < arr[i]){
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+            }
+        }
+        }
+
+        document.write("Sorted Array: " + arr + "<br>");
+
+        var m = parseInt(prompt("enter the element to be searched: "))
+
+        var found = false;
+        var low = 0;
+        var high = arr.length - 1;
+
+        while (low <= high){
+
+            var mid = Math.floor((low + high) / 2);
+
+            if (arr[mid] == m){
+                document.write("Element found at index: " + mid)
+                var found = true;
+                break;
+            }
+            else if (arr[mid] < m){
+                low = mid + 1;
+            }
+            else{
+                high = mid - 1;
+            }
+        }
+        if (!found){
+    document.write("<br>Element not found");
+}
+    
+    </script>
+</body>
+</html>    

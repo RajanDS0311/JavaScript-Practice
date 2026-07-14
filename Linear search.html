@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <title>Linear Search</title>
+        </head>
+    </head>
+
+<body>
+    <script>
+        var n = parseInt(prompt("enter number of elements: "))
+        arr =[]
+
+        for (var i = 0; i < n; i++){
+            arr[i] = parseInt(prompt("enter the element: " + (i+1)))
+        }
+
+        var m = parseInt(prompt("enter the element to be searched: "))
+        for(var j = 0; j < n ; j++){
+            if (arr[j] == m){
+                document.write("Element found at index: " + j)
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
