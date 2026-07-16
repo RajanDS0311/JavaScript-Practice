@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function convert() {
+            var a =(document.f.text.value);
+            var b = parseInt(document.f.i1.value)
+            var c = parseInt(document.f.i2.value)
+
+            document.f.i1.value = b ;
+            document.f.i2.value = c ;
+            document.f.sub.value = a.substring(b,c);
+        }
+    </script>
+
+</head>
+<body>
+    <form name = "f">
+        <b>Enter text:</b>
+        <input type="text" name = "text">
+        <br>
+        <br>
+        <b>Index 1:</b>
+        <input type="text" name = "i1">
+        <br>
+        <br>
+        <b>Index 2:</b>
+        <input type="text" name = "i2" onblur="convert()">
+        <br>
+        <br>
+        <b>Substring:</b>
+        <input type="text" name = "sub"> 
+    </form>
+</body>
+</html>

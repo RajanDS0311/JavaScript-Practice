@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function convert() {
+            var a =(document.f.text.value);
+
+            document.f.length.value = a.length;
+            document.f.upper.value = a.toUpperCase();
+            document.f.lower.value = a.toLowerCase();
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name = "f">
+        <b>Enter text:</b>
+        <input type="text" name = "text" onblur="convert()">
+        <br>
+        <br>
+        <b>Length:</b>
+        <input type="text" name = "length">
+        <br>
+        <br>
+        <b>To Uppercase:</b>
+        <input type="text" name = "upper" >
+        <br>
+        <br>
+        <b>To Lowercase:</b>
+        <input type="text" name = "lower" >
+        
+    </form>
+</body>
+</html>

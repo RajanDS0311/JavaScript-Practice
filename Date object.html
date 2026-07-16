@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function say(){
+
+            var d = new Date();
+            
+            document.f.year.value = d.getYear() ;
+            document.f.fyear.value = d.getFullYear() ;
+            document.f.month.value = d.getMonth() ;
+            document.f.date.value = d.getDate() ;
+            document.f.day.value = d.getDay() ;
+            document.f.hours.value = d.getHours() ;
+            document.f.minutes.value = d.getMinutes() ;
+            document.f.seconds.value = d.getSeconds() ;
+            
+        }
+    </script>
+
+</head>
+<body onload="say()">
+    <form name = "f">
+        <b>Year:</b>
+        <input type="text" name = "year">
+        <br>
+        <br>
+        <b>Full Year:</b>
+        <input type="text" name = "fyear">
+        <br>
+        <br>
+        <b>Month:</b>
+        <input type="text" name = "month">
+        <br>
+        <br>
+        <b>Date:</b>
+        <input type="text" name = "date">
+        <br>
+        <br>
+        <b>Day:</b>
+        <input type="text" name = "day"> 
+        <br>
+        <br>
+        <b>Hours:</b>
+        <input type="text" name = "hours">
+        <br>
+        <br>
+        <b>Minutes:</b>
+        <input type="text" name = "minutes">
+        <br>
+        <br>
+        <b>Seconds:</b>
+        <input type="text" name = "seconds">
+    </form>
+</body>
+</html>
