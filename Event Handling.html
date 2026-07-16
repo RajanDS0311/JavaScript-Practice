@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Handling</title>
+    <script>
+        function sum()
+        {
+            var a=parseInt(document.f1.num1.value);
+            var b=parseInt(document.f1.num2.value);
+            var c=a+b;
+            document.f1.num3.value=c;
+
+        }
+        
+        function sub(){
+            var d = parseInt(document.f1.num1.value);
+            var e = parseInt(document.f1.num2.value);
+            var f = d - e
+            document.f1.num3.value = f
+        }
+
+        function mul(){
+            var g = parseInt(document.f1.num1.value);
+            var h = parseInt(document.f1.num2.value);
+            var i = g * h
+            document.f1.num3.value = i
+        }
+
+        function div(){
+            var j = parseInt(document.f1.num1.value);
+            var k = parseInt(document.f1.num2.value);
+            var l = j / k
+            document.f1.num3.value = l
+        }
+    </script>
+</head>
+<body align = "center">
+<form name="f1">  <h1>
+        Event Handling
+    </h1>
+
+    <br>
+
+    <input type = "text" placeholder="Enter 1st Number" name="num1">
+    <br>
+    <br>
+    <br>
+    <input type = "text" placeholder="Enter 2nd Number" name="num2">
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type = "text" placeholder="Output is" name="num3">
+    <br>
+    <br>
+    <br>
+    <br>
+    <button type="button" height: 30px;background-color: rgb(111, 216, 111);width : 100px ; onclick="sum();">+</button>
+    <button type="button" height: 30px;background-color: rgb(111, 216, 111);width : 100px ; onclick="sub();">-</button>
+    <button type="button" height: 30px;background-color: rgb(111, 216, 111);width : 100px ; onclick="mul();">X</button>
+    <button type="button" height: 30px;background-color: rgb(111, 216, 111);width : 100px ; onclick="div();">%</button>
+    </form>
+  
+</body>
+</html>

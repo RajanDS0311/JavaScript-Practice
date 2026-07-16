@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Calculator</title>
+
+<style>
+    body{
+        background: beige;
+        font-family: Arial, sans-serif;
+    }
+
+    h2{
+        margin-top:30px;
+    }
+
+    table{
+        border-collapse: collapse;
+        background:white;
+        box-shadow:0 0 10px rgb(223, 98, 98);
+    }
+
+    td{
+        padding:5px;
+    }
+
+    input[type="text"]{
+        width:100%;
+        height:50px;
+        font-size:24px;
+        text-align:right;
+        border:none;
+        background:#e8ffe8;
+        padding-right:10px;
+        box-sizing:border-box;
+    }
+
+    input[type="button"]{
+        width:60px;
+        height:60px;
+        font-size:20px;
+        cursor:pointer;
+    }
+
+    input[type="button"]:hover{
+        background:#ddd;
+    }
+</style>
+
+<script>
+
+let firstNumber = "";
+let secondNumber = "";
+let operator = "";
+
+function press(num){
+
+    let display = document.getElementById("display");
+
+    // Replace initial 0
+    if(display.value==="0"){
+        display.value="";
+    }
+
+    // Prevent multiple decimals
+    if(num==="."){
+
+        let current = display.value;
+
+        if(current.includes(".")){
+            return;
+        }
+
+        if(current===""){
+            display.value="0";
+        }
+    }
+
+    display.value += num;
+}
+
+function operation(op){
+
+    let display = document.getElementById("display");
+
+    if(display.value===""){
+        return;
+    }
+
+    firstNumber = display.value;
+    operator = op;
+    display.value="";
+}
+
+function calculate(){
+
+    let display = document.getElementById("display");
+
+    if(operator===""){
+        return;
+    }
+
+    secondNumber = display.value;
+
+    if(secondNumber===""){
+        secondNumber = firstNumber;
+    }
+
+    let answer;
+
+    switch(operator){
+
+        case "+":
+            answer = Number(firstNumber) + Number(secondNumber);
+            break;
+
+        case "-":
+            answer = Number(firstNumber) - Number(secondNumber);
+            break;
+
+        case "*":
+            answer = Number(firstNumber) * Number(secondNumber);
+            break;
+
+        case "/":
+
+            if(Number(secondNumber)===0){
+                answer = "Error";
+            }
+            else{
+                answer = Number(firstNumber) / Number(secondNumber);
+            }
+
+            break;
+
+        case "%":
+
+            if(Number(secondNumber)===0){
+                answer = "Error";
+            }
+            else{
+                answer = Number(firstNumber) % Number(secondNumber);
+            }
+
+            break;
+
+        default:
+            answer="Error";
+    }
+
+    display.value = answer;
+
+    // Allow continuous calculations
+    firstNumber = answer;
+    operator = "";
+}
+
+function clearDisplay(){
+
+    document.getElementById("display").value="0";
+
+    firstNumber="";
+    secondNumber="";
+    operator="";
+}
+
+function backspace(){
+
+    let display = document.getElementById("display");
+
+    if(display.value==="Error"){
+        display.value="0";
+        return;
+    }
+
+    display.value = display.value.slice(0,-1);
+
+    if(display.value===""){
+        display.value="0";
+    }
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<center>
+
+<h2>Basic Calculator</h2>
+
+<table border="2" cellpadding="10">
+
+<tr>
+<td colspan="4">
+<input type="text" id="display" value="0" readonly>
+</td>
+</tr>
+
+<tr>
+<td><input type="button" value="C" onclick="clearDisplay()"></td>
+<td><input type="button" value="⌫" onclick="backspace()"></td>
+<td><input type="button" value="%" onclick="operation('%')"></td>
+<td><input type="button" value="/" onclick="operation('/')"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="7" onclick="press('7')"></td>
+<td><input type="button" value="8" onclick="press('8')"></td>
+<td><input type="button" value="9" onclick="press('9')"></td>
+<td><input type="button" value="*" onclick="operation('*')"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="4" onclick="press('4')"></td>
+<td><input type="button" value="5" onclick="press('5')"></td>
+<td><input type="button" value="6" onclick="press('6')"></td>
+<td><input type="button" value="-" onclick="operation('-')"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="1" onclick="press('1')"></td>
+<td><input type="button" value="2" onclick="press('2')"></td>
+<td><input type="button" value="3" onclick="press('3')"></td>
+<td><input type="button" value="+" onclick="operation('+')"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="00" onclick="press('00')"></td>
+<td><input type="button" value="0" onclick="press('0')"></td>
+<td><input type="button" value="." onclick="press('.')"></td>
+<td><input type="button" value="=" onclick="calculate()"></td>
+</tr>
+
+</table>
+
+</center>
+
+</body>
+</html>
