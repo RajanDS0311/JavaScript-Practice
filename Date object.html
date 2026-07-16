@@ -5,8 +5,8 @@
     function say(){
 
             var d = new Date();
-            
-            document.f.year.value = d.getYear() ;
+
+            document.f.year.value = d.getYear() + 1900 ;
             document.f.fyear.value = d.getFullYear() ;
             document.f.month.value = d.getMonth() ;
             document.f.date.value = d.getDate() ;
@@ -14,7 +14,6 @@
             document.f.hours.value = d.getHours() ;
             document.f.minutes.value = d.getMinutes() ;
             document.f.seconds.value = d.getSeconds() ;
-            
         }
     </script>
 
