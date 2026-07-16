@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function calculate() {
+            var a = parseFloat(document.f.num.value);
+
+            document.f.sqrt.value = Math.sqrt(a);
+            document.f.flr.value = Math.floor(a);
+            document.f.ceil.value = Math.ceil(a);
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name = "f">
+        <b>Num :</b>
+        <input type="text" name = "num" placeholder="Enter a number" onblur="calculate()">
+        <br>
+        <br>
+        <b>Sqare root:</b>
+        <input type="text" name = "sqrt" placeholder="Squareroot is">
+        <br>
+        <br>
+        <b>Floor value:</b>
+        <input type="text" name = "flr" placeholder="Floor value is">
+        <br>
+        <br>
+        <b>Ceil value:</b>
+        <input type="text" name = "ceil" placeholder="Ceil value is">
+        
+    </form>
+</body>
+</html>

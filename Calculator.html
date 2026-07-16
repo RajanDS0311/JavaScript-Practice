@@ -14,9 +14,7 @@
     }
 
     table{
-        border-collapse: collapse;
         background:white;
-        box-shadow:0 0 10px rgb(223, 98, 98);
     }
 
     td{
@@ -185,7 +183,7 @@ function backspace(){
 
 <center>
 
-<h2>Basic Calculator</h2>
+<h2> Calculator</h2>
 
 <table border="2" cellpadding="10">
 
@@ -197,7 +195,7 @@ function backspace(){
 
 <tr>
 <td><input type="button" value="C" onclick="clearDisplay()"></td>
-<td><input type="button" value="⌫" onclick="backspace()"></td>
+<td><input type="button" value="<-" onclick="backspace()"></td>
 <td><input type="button" value="%" onclick="operation('%')"></td>
 <td><input type="button" value="/" onclick="operation('/')"></td>
 </tr>

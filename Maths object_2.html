@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function calculate() {
+            var a = parseFloat(document.f.num1.value);
+            var b = parseFloat(document.f.num2.value);
+
+            document.f.max.value = Math.max(a,b);
+            document.f.min.value = Math.min(a,b);
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name = "f">
+        <b>Num 1:</b>
+        <input type="text" name = "num1" placeholder="Enter a number" >
+        <br>
+        <br>
+        <b>Num 2:</b>
+        <input type="text" name = "num2" placeholder="Enter a number" onblur="calculate()">
+        <br>
+        <br>
+        <b>Max:</b>
+        <input type="text" name = "max" placeholder="Max value is">
+        <br>
+        <br>
+        <b>Min:</b>
+        <input type="text" name = "min" placeholder="Min value is">
+        
+    </form>
+</body>
+</html>
