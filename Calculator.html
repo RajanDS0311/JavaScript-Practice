@@ -56,12 +56,10 @@ function press(num){
 
     let display = document.getElementById("display");
 
-    // Replace initial 0
     if(display.value==="0"){
         display.value="";
     }
 
-    // Prevent multiple decimals
     if(num==="."){
 
         let current = display.value;
@@ -149,7 +147,6 @@ function calculate(){
 
     display.value = answer;
 
-    // Allow continuous calculations
     firstNumber = answer;
     operator = "";
 }
