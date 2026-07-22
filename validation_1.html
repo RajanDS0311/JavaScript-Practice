@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function calculate() {
+            var a = parseFloat(document.f.num.value);
+            if(document.f.num.value=="")
+            {
+              alert("Input field is empty");
+              document.f.num.focus();
+
+            }
+           else  if(isNaN(a))
+            {
+               alert("Only numbers are allowed")
+               document.f.num.value="";
+               document.f.num.focus();
+            }
+           else{
+            document.f.sqrt.value = Math.sqrt(a);
+            document.f.flr.value = Math.floor(a);
+            document.f.ceil.value = Math.ceil(a);
+
+           }
+            
+        }
+    </script>
+</head>
+
+<body onload="document.f.num.focus();">
+    <form name = "f">
+        <b>Num :</b>
+        <input type="text" name = "num" placeholder="Enter a number">
+        <br>
+        <br>
+        <b>Sqare root:</b>
+        <input type="text" name = "sqrt" placeholder="Squareroot is" onfocus="calculate()" readonly>
+        <br>
+        <br>
+        <b>Floor value:</b>
+        <input type="text" name = "flr" placeholder="Floor value is" readonly >
+        <br>
+        <br>
+        <b>Ceil value:</b>
+        <input type="text" name = "ceil" placeholder="Ceil value is" readonly >
+        
+    </form>
+</body>
+</html>

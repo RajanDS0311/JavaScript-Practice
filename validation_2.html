@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <script>
+            function is_empty() {
+
+    if (document.f.fname.value == "") {
+        alert("Enter First Name");
+        document.f.fname.focus();
+        return false;
+    }
+
+    if (document.f.lname.value == "") {
+        alert("Enter Last Name");
+        document.f.lname.focus();
+        return false;
+    }
+
+    if (document.f.address.value == "") {
+        alert("Enter Address");
+        document.f.address.focus();
+        return false;
+    }
+
+    if (document.f.userid.value == "") {
+        alert("Enter User ID");
+        document.f.userid.focus();
+        return false;
+    }
+
+    if (document.f.password.value == "") {
+        alert("Enter Password");
+        document.f.password.focus();
+        return false;
+    }
+
+    if (!document.f.Gender[0].checked &&
+    !document.f.Gender[1].checked &&
+    !document.f.Gender[2].checked) {
+    alert("Select Gender");
+    return false;
+    }
+
+    if (document.f.date.value == "") {
+    alert("Select Date of Birth");
+    document.f.date.focus();
+    return false;
+    }
+
+    if (document.f.file.value == "") {
+    alert("Choose a Photo");
+    return false;
+    }   
+
+    if (!document.f.term.checked) {
+    alert("Accept Terms and Conditions");
+    return false;
+    }
+
+    var hobby = document.f.hobbies;
+    if (!hobby[0].checked &&
+        !hobby[1].checked &&
+        !hobby[2].checked) {
+        alert("Select at least one Hobby");
+        return false;
+    }
+    
+    return true;
+    }
+         </script>
+    </head>
+    <body onload="document.f.fname.focus();">
+        <center>
+            <h2><u>Email Registration Form</u></h2>
+    <form name="f" onsubmit="return is_empty()">
+       <b> First Name :</b>  <input type="text" name="fname"><br>
+       <br>
+       <b> Last name :</b> <input type = "text" name="lname"><br>
+       <br>
+       <b> Gender :</b> <input type = "radio" name = "Gender"> Male  <input type = "radio" name = "Gender"> Female <input type = "radio" name = "Gender"> Other <br>
+       <br>
+       <b>Address :</b> <input type="text" name="address"><br>
+       <br>
+       <B>Nationality :</B><select name="Country">
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>Pakistan</option>
+                        <option>Sri Lanka</option>
+                        <option>England</option>
+                    </select> 
+       <b>DOB :</b> <input type="date" name="date"><br>
+       <br>
+       <b>User id :</b> <input type="text" name="userid"><br>
+       <br>
+       <b>Password :</b> <input type="password" minlength="8" name="password"><br>
+       <br>
+       <b>Photo :</b> <input type="file" name="file"><br>
+       <br>
+       <b>Hobbies :</b> <input type="checkbox" name="hobbies"> Football <input type="checkbox" name="hobbies"> Instagram
+                         <input type="checkbox" name="hobbies"> Programming<br>
+       <br>
+       <input type="checkbox" name = "term"> I accept all the Terms and Conditions.<br>
+       <br>
+       <input type="submit" value="Register"> <input type="reset"> 
+    </form>
+        </center>
+    </body>
+</html>
